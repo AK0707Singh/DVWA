@@ -1,12 +1,7 @@
 name: SonarCloud Analysis with Quality Gate
 
 on:
-  push:
-    branches:
-      - main
-      - maitreyrbhatt-patch-1
-  pull_request:
-    types: [opened, synchronize, reopened]
+  workflow_dispatch:
 
 jobs:
   sonarcloud:
@@ -34,9 +29,9 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.organization=sonarcloudqualitycheck
-            -Dsonar.projectKey=jitu234392_sonarcloud
-            -Dsonar.projectName=sonarcloud-demo
+            -Dsonar.organization=ak0707singh
+            -Dsonar.projectKey=AK0707Singh_DVWA
+            -Dsonar.projectName=DVWA
             -Dsonar.sources=.
             -Dsonar.exclusions=**/tests/**,**/docs/**,**/vendor/**,**/*.md
             -Dsonar.sourceEncoding=UTF-8
